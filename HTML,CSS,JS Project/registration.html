@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Registration Page</title>
+</head>
+
+<body>
+    <section>
+        <div class="header">
+            <div class="subheader">
+                <div class="logo-place">
+                    <img src="images/logo-Anits.png" alt="">
+                </div>
+                <div class="text-header">
+                    <h1>Anil Neerukonda Institute of Technology and Sciences</h1>
+                    <p class="sub-text">
+                        (Autonomous) status accorded by UGC and Andhra University
+                        Approved By AICTE, permanently Affiliated to 
+                        Andhra University
+                        Accredited by NBA (IT, CSE,EEE, ECE, MECH, CHEM and CIVIL) & accredited by NAAC</p>
+                </div>
+
+            </div>
+        </div>
+       <div class="main">
+        <div class="sideMenu">
+            <ul class="list-group">
+                <li><a href="home.html">About</a></li>
+                <li><a href="registration.html" class="active">Admission Form</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="bill.html">Bill Generate</a></li>
+                <li><a href="game.html">Games</a></li>
+            </ul>
+        </div>
+        <div class="pageContent">
+            <div class="admission" id="registration">
+            <h2>Registration Form</h2>
+
+                <form action="">
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="first_name" placeholder="First Name" class="input-field" type="text">
+                            </div>
+                            <img  src="images/user.png" alt="first_name required" title="First Name required" class="input-icon">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="last_name" placeholder="Last Name" class="input-field" type="text">
+                                <img  src="images/id-card.png" alt="Last name required" title="Last Name required" class="input-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="selectContainer">
+                            <div class="input-group">
+                                <select name="department" class="input-field selectpicker">
+                                    <option value="">Select your Department</option>
+                                    <option>Department of Computer Science Engineering</option>
+                                    <option>Mechanical Engineering</option>
+                                    <option>Electrical Engineering</option>
+                                    <option>Chemical Engineering</option>
+                                    <option>Information Technology</option>
+                                    <option>Electrical & Electronics Engineering</option>
+                                    <option>Civil Engineering</option>
+                                </select>
+                                <img  src="images/corporate.png" alt="select required" title="dept required" class="input-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="user_name" placeholder="Username" class="input-field" type="text">
+                                <img  src="images/business-name.svg" alt="user_name required" title="User Name required" class="input-icon">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="password" placeholder="Password" class="input-field"
+                                    type="password">
+                                    <img  src="images/locked.svg" alt="password required" title="password required" class="input-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="email" placeholder="E-Mail Address" class="input-field" type="text">
+                                <img  src="images/email.png" alt="E-Mail required" title="E-Mail required" class="input-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="inputGroupContainer">
+                            <div class="input-group">
+                                <input name="contact_no" placeholder="(+91)" class="input-field" type="text">
+                                <img  src="images/mobile.png" alt="first_name required" title="contact_no required" class="input-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="submit" onclick="submitFunction()"><b>Submit</button>
+                        
+                </form>
+            </div>
+        </div>
+       </div>
+    </section>
+</body>
+<div id="successId" class="modal">
+    <div class="modal-content">
+      <div class="container">
+        <span onclick="document.getElementById('successId').style.display='none'" class="close">&times;</span>
+        <p class="">Details are submitted successfully...</p>
+      </div>
+    </div>
+  </div>
+<script>
+        function submitFunction() {
+            document.getElementById("successId").style.display='block';
+        }
+
+</script>
+</html>

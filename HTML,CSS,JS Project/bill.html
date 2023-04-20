@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bill Page</title>
+</head>
+<body>
+    <section>
+        <div class="header">
+            <div class="subheader">
+                <div class="logo-place">
+                    <img src="images/logo-Anits.png" alt="">
+                </div>
+                <div class="text-header">
+                    <h1>Anil Neerukonda Institute of Technology and Sciences</h1>
+                    <p class="sub-text">
+                        (Autonomous) status accorded by UGC and Andra University
+                        Approved By AICTE, permanently Affiliated to 
+                        Andhra University
+                        Accredited by NBA (IT, CSE,EEE, ECE, MECH, CHEM and CIVIL) & accredited by NAAC</p>
+                </div>
+              
+            </div>
+        </div>
+        <div class="sideMenu">
+            <ul class="list-group">
+                <li><a href="home.html" >About</a></li>
+                <li><a href="registration.html">Admission Form</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="bill.html" class="active">Bill Generate</a></li>
+                <li><a href="game.html">Games</a></li>
+            </ul>
+        </div>
+        <div class="pageContent bill-banner">
+            <div class="about" id="about">
+                <h2>My Cafe</h2> 
+  <div class="container-fluid">
+   <div class="container right color">
+    <div class="part1">
+        <fieldset>
+            <legend>Personal Information</legend>
+            Full Name: <input type="text" class="input-field size" id="name" /> <br />
+      
+            Your Email: <input type="text" class="input-field size" id="email" /><br />
+            Your Mobile: <input type="text" class="input-field size" id="mobile" /><br />
+           </fieldset>
+          </div>
+      
+          <div class="part2">
+           <fieldset>
+            <legend>Your Orders</legend>
+            Coffee (Rs. 20): <input type="text" class="input-field size" id="coffee" /> <br />
+            Sandwich (Rs. 150): <input type="text" class="input-field size" id="sandwich" /><br />
+            Fried Rice (Rs. 190): <input type="text" class="input-field size" id="friedrice" /><br />
+           Noodles (Rs. 50): <input type="text" class="input-field size" id="noodles" /><br />
+           </fieldset>
+          </div>
+         </div>
+      
+         <div class="container right color">
+          <fieldset>
+           <legend>Your Bill</legend>
+           <h3>Your Name:<span id="name2"></span></h3>
+           <h3>Email: <span id="email2"></span></h3>
+           <h3>Mobile: <span id="mobile2"></span></h3>
+           <table border="1">
+            <thead>
+             <tr>
+              <th>Menu</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Amount</th>
+             </tr>
+            </thead>
+            <tbody id="bill">
+            </tbody>
+           </table>
+          </fieldset>
+          <h2>Total Amount: Rs. <span id="amount">0</span></h2>
+         </div>
+        </div>
+    <script>
+   var Coffee = 20,
+    Sandwich = 150,
+    Friedrice = 190,
+   Noodles = 50;
+   var coffee_q = 0,
+    sandwich_q = 0,
+    friedrice_q = 0,
+noodles_q = 0;
+   var name = "",
+    email = "";
+   var coffeeBill = "",
+    sandwichBill = "",
+    friedriceBill = "",
+noodlesBill = "";
+   var total_amount = 0;
+   document.getElementById("name").addEventListener("keyup", function () {
+    document.getElementById("name2").innerHTML = this.value;
+   });
+
+   document.getElementById("email").addEventListener("keyup", function () {
+    document.getElementById("email2").innerHTML = this.value;
+   });
+
+   document.getElementById("mobile").addEventListener("keyup", function () {
+    document.getElementById("mobile2").innerHTML = this.value;
+   });
+
+   document.getElementById("coffee").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     coffeeBill = "";
+     coffee_q = 0;
+     showBill();
+    } else {
+     coffee_q = this.value;
+     coffeeBill = "<tr><td>Coffee</td><td>Rs. " + Coffee + "</td><td>" + coffee_q + "</td><td>" + Coffee + "x" + coffee_q + " = " + Coffee * coffee_q + "</td></tr>";
+     showBill();
+    }
+   });
+
+   document.getElementById("sandwich").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     sandwichBill = "";
+     sandwich_q = 0;
+     showBill();
+    } else {
+     sandwich_q = this.value;
+     sandwichBill = "<tr><td>Sandwich</td><td>Rs. " + Sandwich + "</td><td>" + sandwich_q + "</td><td>" + Sandwich + "x" + sandwich_q + " = " + Sandwich * sandwich_q + "</td></tr>";
+     showBill();
+    }
+   });
+
+   document.getElementById("friedrice").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     friedriceBill = "";
+     friedrice_q = 0;
+     showBill();
+    } else {
+     friedrice_q = this.value;
+     friedriceBill = "<tr><td>Friedrice</td><td>Rs. " + Friedrice + "</td><td>" + friedrice_q + "</td><td>" + Friedrice + "x" + friedrice_q + " = " + Friedrice * friedrice_q + "</td></tr>";
+     showBill();
+    }
+   });
+
+   document.getElementById("noodles").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+    noodlesBill = "";
+    noodles_q = 0;
+     showBill();
+    } else {
+    noodles_q = this.value;
+    noodlesBill = "<tr><td>Maggi</td><td>Rs. " +Noodles + "</td><td>" +noodles_q + "</td><td>" + Friedrice + "x" +noodles_q + " = " +Noodles *noodles_q + "</td></tr>";
+     showBill();
+    }
+   });
+
+   function showBill() {
+    document.getElementById("bill").innerHTML = coffeeBill + sandwichBill + friedriceBill +noodlesBill;
+    document.getElementById("amount").innerHTML = Coffee * coffee_q + Sandwich * sandwich_q + Friedrice * friedrice_q +Noodles *noodles_q;
+   }
+  </script>
+ </body>
+</html>
+   
